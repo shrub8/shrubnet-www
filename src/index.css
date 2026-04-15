@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 220 10% 92%;
+    --card: 220 15% 10%;
+    --card-foreground: 220 10% 92%;
+    --popover: 220 15% 10%;
+    --popover-foreground: 220 10% 92%;
+    --primary: 160 60% 45%;
+    --primary-foreground: 220 15% 8%;
+    --secondary: 220 12% 15%;
+    --secondary-foreground: 220 10% 92%;
+    --muted: 220 12% 18%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 45 80% 55%;
+    --accent-foreground: 220 15% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 12% 20%;
+    --input: 220 12% 20%;
+    --ring: 160 60% 45%;
+    --radius: 0.5rem;
+    
+    --emerald: 160 60% 45%;
+    --amber: 45 80% 55%;
+    --charcoal: 220 15% 8%;
+    --slate: 220 10% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glow-emerald {
+    box-shadow: 0 0 40px -10px hsl(var(--emerald) / 0.3);
+  }
+  
+  .glow-amber {
+    box-shadow: 0 0 40px -10px hsl(var(--amber) / 0.3);
+  }
+  
+  .text-glow-emerald {
+    text-shadow: 0 0 30px hsl(var(--emerald) / 0.4);
+  }
+  
+  .text-glow-amber {
+    text-shadow: 0 0 30px hsl(var(--amber) / 0.4);
+  }
+  
+  .section-padding {
+    @apply px-6 sm:px-8 lg:px-16 xl:px-24;
+  }
+  
+  .section-spacing {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+  
+  .border-subtle {
+    @apply border-border/50;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
