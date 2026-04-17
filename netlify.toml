@@ -1,6 +1,9 @@
+# Netlify config for prerendered SPA
+# We commit dist/ with prerendered content, so no build command needed
+
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "echo 'Using pre-built dist/'"
 
 [[redirects]]
   from = "/*"

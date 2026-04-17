@@ -4,7 +4,7 @@ node_modules/
 .pnp.js
 
 # Build outputs
-dist/
+# dist/        # REMOVED: We commit dist/ for prerendered SPA hosting
 dist-ssr/
 build/
 *.tgz
